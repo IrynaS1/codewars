@@ -28,4 +28,4 @@ function makeNegative(num) {
 	}
 }
 
-makeNegative(42)
+makeNegative(42);
