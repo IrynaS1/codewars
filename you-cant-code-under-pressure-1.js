@@ -4,8 +4,8 @@
 */
 
 function doubleInteger(i) {
-	console.log(i ** 2);
-	return i ** 2;
+  console.log(i * 2);
+  return i * 2;
 }
 
 doubleInteger(2);
