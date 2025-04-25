@@ -1,7 +1,10 @@
 /* Задача
-Программное обеспечение для распознавания символов широко используется для оцифровки печатных текстов. Таким образом, тексты можно редактировать, искать в них информацию и сохранять на компьютере.
 
-При оцифровке документов (особенно старых, написанных на пишущей машинке) программы распознавания символов часто допускают ошибки.
+Программное обеспечение для распознавания символов широко используется для оцифровки печатных текстов. 
+Таким образом, тексты можно редактировать, искать в них информацию и сохранять на компьютере.
+
+При оцифровке документов (особенно старых, написанных на пишущей машинке) программы 
+распознавания символов часто допускают ошибки.
 
 Ваша задача — исправить ошибки в оцифрованном тексте. Вам нужно исправить только следующие ошибки:
 
@@ -10,39 +13,38 @@ O неверно истолковывается как 0
 I неверно истолковывается как 1
 Тестовые примеры содержат числа только по ошибке.
 
-
 */
 
 function correct(string) {
-	const symbols = ['5', '0', '1'];
-	let arr = string.split('');
+  const symbols = ["5", "0", "1"];
+  let arr = string.split("");
 
-	function changeSymbol(a) {
-		switch (a) {
-			case '5':
-				a = 'S';
-				break;
-			case '0':
-				a = 'O';
-				break;
-			case '1':
-				a = 'I';
-				break;
-		}
+  function changeSymbol(a) {
+    switch (a) {
+      case "5":
+        a = "S";
+        break;
+      case "0":
+        a = "O";
+        break;
+      case "1":
+        a = "I";
+        break;
+    }
+    return a;
+  }
 
-		return a;
-	}
+  arr = arr.map(function (el) {
+    if (symbols.includes(el)) {
+      return changeSymbol(el);
+    } else {
+      return el;
+    }
+  });
 
-	arr = arr.map(function (el) {
-		if (symbols.includes(el)) {
-			return changeSymbol(el);
-		} else {
-			return el;
-		}
-	});
-	string = arr.join('');
-	console.log(string);
-	return string;
+  string = arr.join("");
+  console.log(string);
+  return string;
 }
 
-correct("BUDAPE5T");
+correct("L0ND0N");
